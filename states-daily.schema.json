@@ -1,0 +1,241 @@
+{
+  "columns": [
+    {
+      "tag": 0,
+      "name": "date",
+      "kind": "timestamp",
+      "is_part_of_pk": true,
+      "typeinfo": {
+        "type": "datetime",
+        "params": {
+          "sql": "date"
+        }
+      },
+      "col_constraints": [
+        {
+          "constraint_type": "not_null",
+          "params": null
+        }
+      ]
+    },
+    {
+      "tag": 1,
+      "name": "state",
+      "kind": "string",
+      "is_part_of_pk": true,
+      "typeinfo": {
+        "type": "varstring",
+        "params": {
+          "collate": "utf8mb4_0900_ai_ci",
+          "length": "4294967295",
+          "sql": "text"
+        }
+      },
+      "col_constraints": [
+        {
+          "constraint_type": "not_null",
+          "params": null
+        }
+      ]
+    },
+    {
+      "tag": 2,
+      "name": "positive",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 3,
+      "name": "negative",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 4,
+      "name": "pending",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 5,
+      "name": "hospitalized",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 6,
+      "name": "death",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 7,
+      "name": "total",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 8,
+      "name": "hash",
+      "kind": "string",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "varstring",
+        "params": {
+          "collate": "utf8mb4_0900_ai_ci",
+          "length": "4294967295",
+          "sql": "text"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 9,
+      "name": "dateChecked",
+      "kind": "timestamp",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "datetime",
+        "params": {
+          "sql": "date"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 10,
+      "name": "totalTestResults",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 11,
+      "name": "fips",
+      "kind": "string",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "varstring",
+        "params": {
+          "collate": "utf8mb4_0900_ai_ci",
+          "length": "4294967295",
+          "sql": "text"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 12,
+      "name": "deathIncrease",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 13,
+      "name": "hospitalizedIncrease",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 14,
+      "name": "negativeIncrease",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 15,
+      "name": "positiveIncrease",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    },
+    {
+      "tag": 16,
+      "name": "totalTestResultsIncrease",
+      "kind": "int",
+      "is_part_of_pk": false,
+      "typeinfo": {
+        "type": "int",
+        "params": {
+          "width": "32"
+        }
+      },
+      "col_constraints": []
+    }
+  ]
+}

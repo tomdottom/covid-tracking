@@ -1,0 +1,20 @@
+CREATE TABLE `states_daily` (
+  `date`                     DATE NOT NULL COMMENT 'tag:0',
+  `state`                    LONGTEXT NOT NULL COMMENT 'tag:1',
+  `positive`                 INTEGER  COMMENT 'tag:2',
+  `negative`                 INTEGER  COMMENT 'tag:3',
+  `pending`                  INTEGER  COMMENT 'tag:4',
+  `hospitalized`             INTEGER  COMMENT 'tag:5',
+  `death`                    INTEGER  COMMENT 'tag:6',
+  `total`                    INTEGER  COMMENT 'tag:7',
+  `hash`                     LONGTEXT COMMENT 'tag:8',
+  `dateChecked`              DATE     COMMENT 'tag:9',
+  `totalTestResults`         INTEGER COMMENT 'tag:10',
+  `fips`                     LONGTEXT COMMENT 'tag:11',
+  `deathIncrease`            INTEGER COMMENT 'tag:12',
+  `hospitalizedIncrease`     INTEGER COMMENT 'tag:13',
+  `negativeIncrease`         INTEGER COMMENT 'tag:14',
+  `positiveIncrease`         INTEGER COMMENT 'tag:15',
+  `totalTestResultsIncrease` INTEGER COMMENT 'tag:16',
+  PRIMARY KEY (`date`,`state`)
+);
