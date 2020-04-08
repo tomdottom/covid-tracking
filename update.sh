@@ -1,6 +1,6 @@
 #/bin/sh
 
-export TMPDIR=./tmp
+export TMPDIR=$PWD/tmp
 
 git dolt fetch covid-tracking.git-dolt || true
 
