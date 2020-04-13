@@ -1,0 +1,24 @@
+name: Update tomdottom/covid-tracking data repo
+
+on:
+  schedule:
+    # Run at midnight
+    - cron:  '* 0 * * *'
+
+jobs:
+  update:
+    name: Update tomdottom/covid-tracking
+
+    # Execute in container running on ubuntu
+    runs-on: ubuntu-latest
+    container: node:10.18-jessie
+
+    # Actions
+    steps:
+      - name: Install dolt
+        run: curl -L https://github.com/liquidata-inc/dolt/releases/latest/download/install.sh | bash
+      - name: Update
+        run: ./update.sh
+        env:
+          TMPDIR: ${GITHUB_WORKSPACE}/tmp
+
