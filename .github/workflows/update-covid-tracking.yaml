@@ -3,7 +3,7 @@ name: Update tomdottom/covid-tracking data repo
 on:
   schedule:
     # Run at midnight
-    - cron:  '* 0 * * *'
+    - cron:  '* 2 * * *'
 
 jobs:
   update:
@@ -17,8 +17,22 @@ jobs:
     steps:
       - name: Install dolt
         run: curl -L https://github.com/liquidata-inc/dolt/releases/latest/download/install.sh | bash
+
+      - name: Configure dolt
+        run: |
+            # dolt doesn't respect $HOME dir so we have to make $HOME match
+            # dolt's expectations
+            export HOME=$(awk -F: -v v="$(whoami)" '{if ($1==v) print $6}' /etc/passwd)
+            rm -rf "${HOME}/.dolt/"
+            mkdir -p "${HOME}/.dolt/creds/"
+            dolt config --global --add user.name "Tom Marks"
+            dolt config --global --add user.email "thomas.o.marks@gmail.com"
+            echo "${CREDS_JWK_B64}" | base64 --decode >  "${HOME}/.dolt/creds/${CREDS_HASH}.jwk"
+            dolt config --global --add user.creds "${CREDS_HASH}"
+        env: 
+          CREDS_HASH: ${{ secrets.CREDS_HASH }}
+          CREDS_JWK_B64: ${{ secrets.CREDS_JWK_B64 }}
+
       - name: Update
         run: ./update.sh
-        env:
-          TMPDIR: ${GITHUB_WORKSPACE}/tmp
 
