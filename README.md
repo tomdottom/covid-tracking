@@ -19,6 +19,8 @@ Or just run:
     curl http://covidtracking.com/api/states/daily.csv > states-daily
     dolt table import --update-table states_daily states-daily.csv
 
+NOTE: Data is updated at 2am via GitHub Actions.
+
 
 ## Querying NY infection rate
 
