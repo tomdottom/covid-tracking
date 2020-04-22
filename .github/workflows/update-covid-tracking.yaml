@@ -7,18 +7,18 @@ on:
 jobs:
    update:
      name: Update tomdottom/covid-tracking
- 
+
      # Execute in container running on ubuntu
      runs-on: ubuntu-latest
      container: node:10.18-jessie
- 
+
      # Actions
      steps:
        - uses: actions/checkout@v2
 
        - name: Install dolt
          run: curl -L https://github.com/liquidata-inc/dolt/releases/latest/download/install.sh | bash
- 
+
        - name: Configure dolt
          run: |
              # dolt doesn't respect $HOME dir so we have to make $HOME match
@@ -30,10 +30,10 @@ jobs:
              dolt config --global --add user.email "thomas.o.marks@gmail.com"
              echo "${CREDS_JWK_B64}" | base64 --decode >  "${HOME}/.dolt/creds/${CREDS_HASH}.jwk"
              dolt config --global --add user.creds "${CREDS_HASH}"
-         env: 
+         env:
            CREDS_HASH: ${{ secrets.CREDS_HASH }}
            CREDS_JWK_B64: ${{ secrets.CREDS_JWK_B64 }}
- 
+
        - name: Update
-         run: cd $GITHUB_WORKSPACE && ./update.sh
+         run: cd $GITHUB_WORKSPACE && dolt config --list && ./update.sh
 
