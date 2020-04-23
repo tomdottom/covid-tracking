@@ -3,6 +3,9 @@
 export TMPDIR="$PWD/tmp"
 mkdir -p "${TMPDIR}"
 
+dolt config --list
+dolt config --global --list
+
 git dolt fetch covid-tracking.git-dolt || true
 
 cd covid-tracking
